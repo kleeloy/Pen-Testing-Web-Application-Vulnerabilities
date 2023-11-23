@@ -11,16 +11,15 @@ This tutorial outlines a application security engineer at Replicants, testing we
 
 - Oracle VM (Virtual box)
 - Vagrant
-- command injection 
 
 <h2>List of Prerequisites</h2>
 
 - Dot dot slash attacks
 - Web application vulnerability assessments
--Injection
--Brute force attacks
--Broken authentication
--Burp Suite
+- Injection
+- Brute force attacks
+- Broken authentication
+- Burp Suite
 -Web proxies
 -Directory traversal
 -Beef
