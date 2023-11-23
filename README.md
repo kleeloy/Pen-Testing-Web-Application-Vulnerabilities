@@ -4,7 +4,7 @@
 </p>
 
 <h1>Web Application Vulnerabilities</h1>
-This tutorial outlines a application security engineer at Replicants, testing web vulnerabiltiies on new web applications created.<br />
+This tutorial outlines an application security engineer at Replicants, testing web vulnerabiltiies on new web applications created.<br />
 
 
 <h2>Environments and Technologies Used</h2>
@@ -35,7 +35,14 @@ This tutorial outlines a application security engineer at Replicants, testing we
 <img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/ISS%20complete%20(Lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-World Wide Web Services -> Application Development Features -> [X] CGI. Checked by checking the local host, 127.0.0.1 to loot back.
+First navigated to a new web application built by replicants, (http://192.168.13.25/vulnerabilities/exec/). This new page was built by Replicants in order to enable their customers to `ping` an IP address. The web page will return the results of the ping command back to the user. I started by testing the webpage by entering the IP address `8.8.8.`. Behind the scenes, when submitted, the IP you type in the field is injected into a command that runs aganist the Replicants webserver. 
+</p>
+<br />
+<p>
+Next, I tested if I could manipulate the input to cause an unientended result by entering the following command (payload) in the field: `8.8.8.8 && pwd`. With the results determining that the new application is vulnerable. 
+</p>
+<br /><p>
+I was tasked with using the dot-dot-slash method to design two payloads that will display the contents on the following files: `/etc/passwd` `/etc/hosts` Based on my findings I recommended that segregation of confidential files from the web server and accessible directories, permissions to restrict web server account accessibility, and server-side validation that does not allow selection of unintended files. 
 </p>
 <br />
 
