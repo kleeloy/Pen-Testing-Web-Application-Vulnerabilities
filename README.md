@@ -1,9 +1,9 @@
 
 <p align="center">
-<img src="https://i.imgur.com/Clzj7Xs.png" alt="osTicket logo"/>
+<img src="https://github.com/kleeloy/Pen-Testing-Web-Application-Vulnerabilities/blob/main/Diagrams/app-hardening-banner.jpg" alt="osTicket logo"/>
 </p>
 
-<h1>Pen-Testing-Web-Application-Vulnerabilities</h1>
+<h1>Web Application Vulnerabilities</h1>
 This tutorial outlines a application security engineer at Replicants, testing web vulnerabiltiies on new web applications created.<br />
 
 
