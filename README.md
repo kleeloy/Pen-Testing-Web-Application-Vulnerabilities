@@ -10,13 +10,22 @@ This tutorial outlines a application security engineer at Replicants, testing we
 <h2>Environments and Technologies Used</h2>
 
 - Oracle VM (Virtual box)
+- Vagrant
+- command injection 
 
 <h2>List of Prerequisites</h2>
 
-- Enable Internet Information Services (IIS)
-- Web Platform Install
-- Install My SQL (Set Up Usernames And Passwords)
-- Configure permissions and Install Osticket
+- Dot dot slash attacks
+- Web application vulnerability assessments
+-Injection
+-Brute force attacks
+-Broken authentication
+-Burp Suite
+-Web proxies
+-Directory traversal
+-Beef
+-Cross-site scripting
+-Malicious payloads
 
 <h2>Installation Steps</h2>
 
