@@ -27,32 +27,40 @@ This tutorial outlines an application security engineer at Replicants, testing w
 -Malicious payloads
 
 <h2>Installation Steps</h2>
+<h3>"Your wish is my command"</h3>
+
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/ISS%20complete%20(Lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+
+First navigated to a new web application built by replicants, (http://192.168.13.25/vulnerabilities/exec/). This new page was built by Replicants in order to enable their customers to `ping` an IP address. The web page will return the results of the ping command back to the user. I started by testing the webpage by entering the IP address `8.8.8.`. Behind the scenes, when submitted, the IP you type in the field is injected into a command that runs aganist the Replicants webserver. 
+
+
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Enable%20ISS%20(Lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+
+Next, I tested if I could manipulate the input to cause an unientended result by entering the following command (payload) in the field: `8.8.8.8 && pwd`. With the results determining that the new application is vulnerable. 
 
 <p>
 <img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Enable%20ISS%20(Lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/ISS%20complete%20(Lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Web%20Platform%20install%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-First navigated to a new web application built by replicants, (http://192.168.13.25/vulnerabilities/exec/). This new page was built by Replicants in order to enable their customers to `ping` an IP address. The web page will return the results of the ping command back to the user. I started by testing the webpage by entering the IP address `8.8.8.`. Behind the scenes, when submitted, the IP you type in the field is injected into a command that runs aganist the Replicants webserver. 
-</p>
-<br />
-<p>
-Next, I tested if I could manipulate the input to cause an unientended result by entering the following command (payload) in the field: `8.8.8.8 && pwd`. With the results determining that the new application is vulnerable. 
-</p>
-<br /><p>
+
 I was tasked with using the dot-dot-slash method to design two payloads that will display the contents on the following files: `/etc/passwd` `/etc/hosts` Based on my findings I recommended that segregation of confidential files from the web server and accessible directories, permissions to restrict web server account accessibility, and server-side validation that does not allow selection of unintended files. 
-</p>
-<br />
+
+<h3>"A Brute Force To Be Recokoned With"</h3>
 
 <p>
 <img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Web%20Platform%20install%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
 <p>
-Installed web platforms: PHP Manager for ISS, Rewrite module, PHP 7.3.8, VC_redist.x86.exe
+Installed web platforms: PHP Manager for ISS, Rewrite module, PHP 7.3.8, VC_redist.x86.exe 
 </p>
 <br />
+
 
 <p>
 <img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/My%20SQl%20setup%20Typical%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
