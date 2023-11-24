@@ -114,3 +114,5 @@ Went to the `payloads` tab, `payload` type set as `simple list`. Added the login
 </p>
 
 Started the attack. After analysis of intruder attack results, the login username/password combination of `Tonystark` and `IamironMan` did result in a successful login. I recommended mitigations including requiring complex usernames and passwords, using multi-factored authentication, and enable a lockout after a certain amount of failed login attempts. 
+
+<h3>"Where's the BeEF"</h3>
