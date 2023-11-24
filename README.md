@@ -30,7 +30,7 @@ This tutorial outlines an application security engineer at Replicants, testing w
 <h3>"Your wish is my command"</h3>
 
 <p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/ISS%20complete%20(Lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/kleeloy/Pen-Testing-Web-Application-Vulnerabilities/blob/main/Diagrams/Web-app-1.png" height="40%" width="40%" alt="Disk Sanitization Steps"/>
 </p>
 
 First navigated to a new web application built by replicants, (http://192.168.13.25/vulnerabilities/exec/). This new page was built by Replicants in order to enable their customers to `ping` an IP address. The web page will return the results of the ping command back to the user. I started by testing the webpage by entering the IP address `8.8.8.`. Behind the scenes, when submitted, the IP you type in the field is injected into a command that runs aganist the Replicants webserver. 
