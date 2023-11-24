@@ -56,46 +56,61 @@ I was tasked with using the dot-dot-slash method to design two payloads that wil
 <p>
 <img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Web%20Platform%20install%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-Installed web platforms: PHP Manager for ISS, Rewrite module, PHP 7.3.8, VC_redist.x86.exe 
-</p>
-<br />
 
+Still on Vagrant, navigated to the webpage http://192.168.13.35/ba_insecure_login_1.php. This page is an administrative web application that serves as a simple login page.
 
 <p>
 <img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/My%20SQl%20setup%20Typical%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
-<p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Standard%20Configuration%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Root%20password%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Os%20ticket%20installer.png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
-</p>
-<p>
-Install my SQL, Typical setup, Launch configuration WIzard (after install), Standard Configuration, Setup Root Password. What this does is installing a database for this computer. 
-</p>
-<br />
+
+In Vagrant command line, ran command `sudo burpsuite`. OPen firefoc with `foxyProxy`. 
 
 <p>
 <img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
+
+Using the web application tool 'BurpSuite', the following data was intercepted:
+
+```
+REQUEST TO http://192.168.13.35:80
+```
+```
+POST /ba_insecure_login_1.php HTTP/1.1
+Host: 192.168.13.35
+User-Agent: Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:68.0) Gecko/20100101 Firefox/68.0
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 45
+Connection: close
+Referer: http://192.168.13.35/ba_insecure_login_1.php
+Cookie: PHPSESSID=l998k837fiaj3b5c1o8kcsf0m6; security_level=0
+Upgrade-Insecure-Requests: 1
+
+login=test-user&password=password&form=submit
+```
+
 <p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/Assisging%20permissions%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
+
+I sent the proxy intercept results to the intruder tab and verified the `target` 
+
 <p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/heidi%20sql%20server%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
+
+Went to the positions tab within intruder, and selected attack type `cluster bomb`. Configured and added `login` and `password` as positions. 
+
 <p>
-<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/osticket%20successfully%20installed%20(lab3).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
+
+Went to the `payloads` tab, `payload` type set as `simple list`. Added the login user ID from `List of Administrators` file into payload set 1. Added passwords from `Breached list of passwords` file into payload set 2.
+
 <p>
-Back to IIS, sites -> Default -> osTicket, Double-click PHP Manager, Click “Enable or disable an extension”
-Enable: php_imap.dll
-Enable: php_intl.dll
-Enable: php_opcache.dll
-Assign Permissions: ost-cofig.php, Downloaded and installed HeidiSQL, continued setting up osticket in the browser
+<img src="https://github.com/kleeloy/osticket-prereqs/blob/main/Diagrams/configuring%20the%20osticket%20php%20manager%20(lab%203).png" height="60%" width="60%" alt="Disk Sanitization Steps"/>
 </p>
-<br />
+
+Started the attack. After analysis of intruder attack results, the login username/password combination of `Tonystark` and `IamironMan` did result in a successful login. I recommended mitigations including requiring complex usernames and passwords, using multi-factored authentication, and enable a lockout after a certain amount of failed login attempts. 
