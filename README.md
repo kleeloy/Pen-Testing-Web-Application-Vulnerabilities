@@ -20,11 +20,11 @@ This tutorial outlines an application security engineer at Replicants, testing w
 - Brute force attacks
 - Broken authentication
 - Burp Suite
--Web proxies
--Directory traversal
--Beef
--Cross-site scripting
--Malicious payloads
+- Web proxies
+- Directory traversal
+- Beef
+- Cross-site scripting
+- Malicious payloads
 
 <h2>Installation Steps</h2>
 <h3>"Your wish is my command"</h3>
